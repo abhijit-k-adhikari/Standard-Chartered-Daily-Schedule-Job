@@ -7,3 +7,5 @@ In case you want to run the application from the shared code. Please perform the
    a) npm install
    b) gulp buildall
    c) npm start
+
+You can access the URL at http://www.payzzi.com/abhijit
