@@ -1,0 +1,116 @@
+<table id="taskmonitorContainer" class="contentContainer" contentContainerHeight>
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <table style="margin: 10px auto 10px auto;">
+                    <tr>
+                        <td style="text-align: center">
+                            <div style="text-align:center">
+                                <a href="#aboutModal" data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-success">
+                                    <div>
+                                        <h4>912</h4>
+                                        <h5>success</h5>
+                                    </div>
+                                </a>
+                                <a href="#aboutModal" data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-info">
+                                    <div>
+                                        <h4>4</h4>
+                                        <h5>running</h5>
+                                    </div>
+                                </a>
+                                <a href="#aboutModal" data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-warning">
+                                    <div>
+                                        <h4>10</h4>
+                                        <h5>on-hold</h5>
+                                    </div>
+                                </a>
+                                <a href="#aboutModal" data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-danger">
+                                    <div>
+                                        <h4>40</h4>
+                                        <h5>failed</h5>
+                                    </div>
+                                </a>
+                                <a href="#aboutModal" data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-primary">
+                                    <div>
+                                        <h4>-</h4>
+                                        <h5>ALL</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <span>
+                                    <label>Last Result</label>
+                                    <select name="status">
+                                        <option value="Success">Success</option>
+                                        <option value="Failed">Failed</option>
+                                        <option value="OnHold">On Hold</option>
+                                        <option value="Running">Running</option>
+                                    </select>
+                                </span>
+                            </td>
+                            <td>
+                                <span>
+                                    <label>Job Name</label>
+                                    <input type="text" width="200">
+                                </span>
+                            </td>
+                            <td>
+                                <a class="btn btn-success"><span class="glyphicon glyphicon-search"></span> Find</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+            <td style="margin: 0 auto 0 auto" *ngIf="this._showSummary">
+                <div id="types" class="btn-group" style="width: 400px">
+                    <button name="color" type="button" class="btn btn-info" value="btn-success"><span class="glyphicon glyphicon-play"></span> Start</button>
+                    <button name="color" type="button" class="btn btn-primary" value="btn-primary"><span class="glyphicon glyphicon-stop"></span> Stop</button>
+                    <button name="color" type="button" class="btn btn-success" value="btn-info"><span class="glyphicon glyphicon-transfer"></span> Run</button>
+                    <button name="color" type="button" class="btn btn-danger" value="btn-default"><span class="glyphicon glyphicon-record"></span> Disable</button>
+                    <button name="color" type="button" class="btn btn-warning" value="btn-warning"><span class="glyphicon glyphicon-export"></span> Export</button>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+        </tr>
+        <tr *ngIf="this._showSummary">
+            <td style="text-align: right" colspan="2">
+                <button type="button" class="hyperlinkButton" (click)="gotoJobDetailPage()">GO TO JOB DETAIL PAGE</button>
+            </td>
+        </tr>
+
+        <tr *ngIf="!this._showSummary">
+            <td style="text-align: right" colspan="2">
+                <button type="button" class="hyperlinkButton" (click)="gotoSummaryPage()">GO BACK TO SUMMARY PAGE</button>
+            </td>
+        </tr>
+        <tr *ngIf="this._showSummary">
+            <td colspan="2">
+                <my-grid [inputGridSettings]="myGridSettings"></my-grid>
+            </td>
+        </tr>
+        <tr *ngIf="!this._showSummary">
+            <td colspan="2">
+                <jobdetail></jobdetail>
+            </td>
+        </tr>
+    </tbody>
+</table>
