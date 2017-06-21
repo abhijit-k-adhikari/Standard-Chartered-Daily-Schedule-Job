@@ -1,0 +1,31 @@
+<table id="summaryContainer" class="contentContainer" contentContainerHeight>
+    <tbody>
+        <tr>
+            <td>
+                <datepicker></datepicker>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <table style="margin: 0px auto 0px auto;">
+                    <tr>
+                        <td style="text-align: center; vertical-align: middle">
+                            <nvd3 [options]="lineOptions" [data]="jobStatusWeeklyData"></nvd3>
+                        </td>
+                        <td style="text-align: center; vertical-align: middle">
+                            <nvd3 [options]="donutChartOptions" [data]="jobStatusPercentageData"></nvd3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center">
+                            <button type="button" class="hyperlinkButton">Days Statistic</button>
+                        </td>
+                        <td style="text-align: center">
+                            <button type="button" class="hyperlinkButton">Job Status Percentage</button>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </tbody>
+</table>
